@@ -8,7 +8,7 @@ def get_big_mac_price_by_year(year,country_code):
     
     country_code = country_code.upper()
     df['year'] = df['date'].str[:4]
-    price = df[(df['year'] == str(year)) & (df['iso_a3'] == country_code)]['dollar_price'].mean()
+    price = df[(df['year'] == str(year)) & (df['iso_a3'] == country_code)]['dollar_price'].mean() #This line of code specifically the "&" symbol was written using the help of generative AI
     return round(price, 2)
 
 def get_big_mac_price_by_country(country_code):
@@ -52,3 +52,5 @@ if __name__ == "__main__":
     print(get_big_mac_price_by_country("usa"))
     print(get_the_cheapest_big_mac_price_by_year(2010))
     print(get_the_most_expensive_big_mac_price_by_year(2010))
+
+    #The & symbol compares the two sides of whatever is being called in this case the year and iso_a3 column using binary code. 
